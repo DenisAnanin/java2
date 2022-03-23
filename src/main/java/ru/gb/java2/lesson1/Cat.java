@@ -1,12 +1,12 @@
 package ru.gb.java2.lesson1;
 
-public class Humen {
+public class Cat {
     private int distance;
     private int up;
 
-    public Humen() {
-        this.distance = 100;
-        this.up = 1;
+    public Cat() {
+        this.distance = 50;
+        this.up = 2;
     }
 
     public int getDistance() {
