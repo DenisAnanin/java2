@@ -1,3 +1,5 @@
+package ru.gb.java2.lesson1;
+
 public class Humen {
     private int distance;
     private int up;
