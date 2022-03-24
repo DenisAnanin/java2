@@ -3,10 +3,10 @@ package ru.gb.java2.lesson1;
 public class Cat implements Runner {
     private int distance;
     private int up;
-
-    public Cat() {
-        this.distance = 100;
-        this.up = 2;
+    private boolean run = true;
+    public Cat(int distance, int up) {
+        this.distance = distance;
+        this.up = up;
     }
 
     public int getDistance() {
@@ -17,20 +17,27 @@ public class Cat implements Runner {
         return this.up;
     }
     @Override
-    public void run(Treadmill t) {
+    public void run(Track t) {
         if (t.getDistance() <= this.distance) {
-            System.out.println("Кот пробежал " + t.getDistance() + " метров.");
+            System.out.println("Кот пробежал " + t.getDistance());
         } else {
-            System.out.println("Кот не смог пробежать " + t.getDistance() + " метров.");
+            System.out.println("Кот не смог пробежать " + t.getDistance() + " и выбыл.");
+            run = false;
         }
     }
 
     @Override
-    public void jamp(Barrier b) {
+    public void jump(Barrier b) {
         if (b.getHeight() <= this.up) {
-            System.out.println("Кот прыгнул на " + b.getHeight() + " метров");
+            System.out.println("Кот прыгнул на " + b.getHeight());
         } else {
-            System.out.println("Кот не смог прыгнуть на " + b.getHeight() + " метров");
+            System.out.println("Кот не смог прыгнуть на " + b.getHeight() + " и выбыл.");
+            run = false;
         }
+    }
+
+    @Override
+    public boolean isRun() {
+        return run;
     }
 }

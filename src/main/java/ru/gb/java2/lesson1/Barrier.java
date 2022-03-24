@@ -13,6 +13,10 @@ public class Barrier implements Obstacle{
 
     @Override
     public void overcome(Runner runner) {
-        runner.jamp(this);
+        if (runner.isRun()) {
+            runner.jump(this);
+        } else {
+            return;
+        }
     }
 }

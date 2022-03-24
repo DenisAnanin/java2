@@ -1,9 +1,9 @@
 package ru.gb.java2.lesson1;
 
-public class Treadmill implements Obstacle{
+public class Track implements Obstacle{
     private int distance;
 
-    public Treadmill(int distance) {
+    public Track(int distance) {
         this.distance = distance;
     }
 
@@ -13,6 +13,10 @@ public class Treadmill implements Obstacle{
 
     @Override
     public void overcome(Runner runner) {
-        runner.run(this);
+        if (runner.isRun()) {
+            runner.run(this);
+        } else {
+            return;
+        }
     }
 }
